@@ -8,8 +8,8 @@ def view_cart(request):
 
 
 def add_to_cart(request, id):
-    """Add a quantity of the specified product to the cart"""
-    quantity = int(request.POST.get('quantity'))
+    """Add 1 of item to the cart, as tehy are unique items"""
+    quantity = 1
 
     cart = request.session.get('cart', {})
     cart[id] = cart.get(id, quantity)
@@ -20,8 +20,8 @@ def add_to_cart(request, id):
 
 def adjust_cart(request, id):
     """
-    Adjust the quantity of the specified product to the specified
-    amount
+    Adjust the quantity of the specified artefact, to allow user to
+    remove the artefact from the cart
     """
     quantity = int(request.POST.get('quantity'))
     cart = request.session.get('cart', {})
