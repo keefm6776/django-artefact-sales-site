@@ -4,7 +4,7 @@ from django.db import models
 
 class Artefact(models.Model):
     name = models.CharField(max_length=254, default='')
-    description = models.CharField(max_length=500, default='')
+    description = models.TextField()
     history = models.TextField()
     century = models.DecimalField(max_digits=3, decimal_places=0)
 
