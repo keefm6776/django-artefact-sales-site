@@ -5,7 +5,7 @@ from .forms import MakePaymentForm, OrderForm
 from .models import OrderLineItem
 from django.conf import settings
 from django.utils import timezone
-from products.models import Product
+from artefacts.models import Artefact
 import stripe
 
 # Create your views here.
@@ -27,11 +27,11 @@ def checkout(request):
             cart = request.session.get('cart', {})
             total = 0
             for id, quantity in cart.items():
-                product = get_object_or_404(Product, pk=id)
-                total += quantity * product.price
+                artefact = get_object_or_404(Artefact, pk=id)
+                total += quantity * artefact.price
                 order_line_item = OrderLineItem(
                     order=order,
-                    product=product,
+                    artefact=artefact,
                     quantity=quantity
                 )
                 order_line_item.save()
@@ -49,7 +49,7 @@ def checkout(request):
             if customer.paid:
                 messages.error(request, "You have successfully paid")
                 request.session['cart'] = {}
-                return redirect(reverse('products'))
+                return redirect(reverse('artefacts'))
             else:
                 messages.error(request, "Unable to take payment")
         else:
