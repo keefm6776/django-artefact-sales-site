@@ -1,6 +1,8 @@
 # MODULE 9 (Full Stack Frameworks With Django) PROJECT - Code Institute Full Stack Developer Diploma
 # E-Commerce Website (Artefact Sales)
 
+[![Build Status](https://www.travis-ci.org/keefm6776/django-artefact-sales-site.svg?branch=master)](https://www.travis-ci.org/keefm6776/django-artefact-sales-site)
+
 ## Project purpose:
 
 In this project, you'll build a full-stack site based around business logic used to control a

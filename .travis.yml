@@ -1,0 +1,6 @@
+language: python
+python:
+= "3.7.4"
+install: "pip install -rexit requirements.txt"
+script:
+= SECRET_KET="indiana" ./manage.py test
