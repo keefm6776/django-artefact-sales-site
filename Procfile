@@ -1,0 +1,1 @@
+web: guincorn django-artefact-sales-site.wsgi:application
