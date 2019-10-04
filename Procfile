@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: guincorn sell_artefacts.wsgi:application
+web: gunicorn sell_artefacts.wsgi:application
