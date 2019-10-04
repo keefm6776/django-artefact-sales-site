@@ -1,2 +1,2 @@
-web: guincorn django-artefact-sales-site.wsgi:application
+web: guincorn sell_artefacts.wsgi:application
 release: python manage.py migrate

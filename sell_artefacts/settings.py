@@ -80,7 +80,9 @@ WSGI_APPLICATION = 'sell_artefacts.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
+ #https://docs.djangoproject.com/en/1.11/ref/settings/#databases
+
+#DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 
 if "DATABASE_URL" in os.environ:
     DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
