@@ -30,10 +30,6 @@ class ArtefactTests(TestCase):
         test_price = Artefact(price=13000.00)
         self.assertEqual(test_price.price, 13000)
 
-    def test_current_bid_ok(self):
-        test_current_bid = Artefact(current_bid=200.50)
-        self.assertEqual(test_current_bid.current_bid, 200.50)
-
     def test_sold_ok(self):
         test_sold = Artefact(sold=True)
         self.assertEqual(test_sold.sold, True)
