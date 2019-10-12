@@ -1,7 +1,6 @@
 from django.db import models
 from artefacts.models import Artefact
 
-# Create your models here.
 # Adapted from Course Instiute Notes
 
 class Order(models.Model):
