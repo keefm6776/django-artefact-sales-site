@@ -1,5 +1,5 @@
 from django.db import models
-from artefacts.models import Artefact
+from artefacts.models import Artefact, Customer
 
 # Adapted from Course Instiute Notes
 
@@ -13,6 +13,7 @@ class Order(models.Model):
     street_address2 = models.CharField(max_length=40, blank=False)
     county = models.CharField(max_length=40, blank=False)
     date = models.DateField()
+    customer_id = models.ForeignKey(Customer, null=False)
 
 
     def __str__(self):

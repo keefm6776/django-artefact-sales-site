@@ -1,8 +1,5 @@
 {% extends 'base.html' %}
 
-
-
-
 {% block content %}
 {% if user.is_authenticated %}
 <div class="row row-flex">
@@ -12,7 +9,8 @@
 			<div class="artefact" style="background-image: url('{{ MEDIA_URL }}{{ artefact.image }}')"></div>
 
 			<h3>{{ artefact.name }}</h3>
-			<p class="artefact-description">{{ artefact.description }}</p>
+			<p class="artefact-description">{{ artefact.description|truncatewords:30 }}</p>
+            <p><a href="{% url 'artefact_detail' artefact.id %}"  class="btn btn-default">Read more</a></p>
 			<p>{{ artefact.price }}</p>
 
 			<form method="post" action="{% url 'add_to_cart' artefact.id %}">
