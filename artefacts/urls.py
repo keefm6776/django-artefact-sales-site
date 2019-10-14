@@ -6,5 +6,5 @@ from .views import all_artefacts, artefact_detail
 
 urlpatterns = [
     url(r'^$', all_artefacts, name='artefacts'),
-    url(r'artefacts/', artefact_detail, name='artefact_detail')
+    url(r'^(?P<pk>\d+)/$', artefact_detail, name='artefact_detail')
 ]
