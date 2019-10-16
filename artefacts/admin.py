@@ -1,6 +1,12 @@
 from django.contrib import admin
-from .models import Artefact
+from artefacts.models import Artefact
+from bids.models import BidHistory
+from customer.models import Customer
 
 # Register your models here.
 
 admin.site.register(Artefact)
+admin.site.register(BidHistory)
+admin.site.register(Customer)
+
+
