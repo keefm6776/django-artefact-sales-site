@@ -16,7 +16,6 @@ class Artefact(models.Model):
     image = models.ImageField(upload_to='images')
     price = models.DecimalField(max_digits=9, decimal_places=2, blank=False)
     sold = models.BooleanField(default=False)
-    current_bid = models.DecimalField(max_digits=9, decimal_places=2, blank=False)
 
     def __str__(self):
         return self.name
